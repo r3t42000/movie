@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Movie</title>
+  <link rel="stylesheet" href="css/reset.css.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/base.sass"/>
+  <link rel="stylesheet" href="css/movie.css"/>
+</head>
+<body>
+  <div class="wrapper" id="movie">
+    <header class="navbar">
+      <div class="container">
+        <div class="nav_innerbox">
+          <div class="logo">What I Prefer</div>
+          <div class="searchbar">
+            <label>SEARCH</label>
+            <input class="search" v-model="filter"/>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="section">
+      <div class="container">
+        <div class="grid"><a class="grid-item" :href="m.wiki" v-for="m in filter_moviedatas">
+            <div class="grid-item__box"></div><img :src="m.image_url" alt=""/>
+            <div class="info">
+              <div class="name" v-html="m.name"></div>
+              <div class="editor" v-html="m.editor"></div>
+              <div class="year" v-html="m.year"></div>
+            </div></a></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.js"></script>
+  <script src="js/dream.js"></script>
+</body>

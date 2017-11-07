@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Movie
+    link(rel="stylesheet", href="css/reset.css.css")
+    link(rel="stylesheet", href="css/base.css")
+    link(rel="stylesheet", href="css/base.sass")
+    link(rel="stylesheet", href="css/movie.css")
+body
+    .wrapper#movie
+        header.navbar
+            .container
+                .nav_innerbox
+                    .logo What I Prefer
+                    .searchbar
+                        label SEARCH
+                        input.search(v-model="filter")
+
+        .section
+            .container
+                .grid
+                    a(:href="m.wiki").grid-item(v-for="m in filter_moviedatas")
+                        .grid-item__box
+                        img(:src="m.image_url", alt="")
+
+                        .info
+                            .name(v-html="m.name")
+                            .editor(v-html="m.editor")
+                            .year(v-html="m.year")
+    script(src="js/jquery.min.js")
+    script(src="js/vue.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.js")
+    script(src="js/dream.js")
+
