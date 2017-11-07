@@ -1,8 +1,11 @@
 $(document).ready(function(){
     var $grid = $('.grid').masonry({
         itemSelector: '.grid-item',
-        columnWidth: '.grid-item'
+        columnWidth: '.grid-item',
+
     });
+    $grid.masonry('reloadItems')
+    msnry.reloadItems()
 })
 
 var moviedatas=
